@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f0c1b"/>
+      <stop offset="50%" stop-color="#161329"/>
+      <stop offset="100%" stop-color="#090710"/>
+    </linearGradient>
+
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff007f"/>
+      <stop offset="50%" stop-color="#7928ca"/>
+      <stop offset="100%" stop-color="#00f0ff"/>
+    </linearGradient>
+
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#ffd56b"/>
+    </linearGradient>
+
+    <!-- Subtle Glow Filter -->
+    <filter id="pixelGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Retro Pixel Grid Pattern -->
+    <pattern id="pixelGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.04"/>
+    </pattern>
+  </defs>
+
+  <style>
+    @keyframes pulseCard {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-7px); }
+    }
+    @keyframes starTwinkle {
+      0%, 100% { opacity: 0.2; transform: scale(0.8); }
+      50% { opacity: 0.9; transform: scale(1.3); }
+    }
+    @keyframes scanlineFlow {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(360px); }
+    }
+    @keyframes floatPill {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    .retro-grid { fill: url(#pixelGrid); }
+    .card-float-1 { animation: pulseCard 4s ease-in-out infinite; }
+    .card-float-2 { animation: pulseCard 4.5s ease-in-out infinite 0.8s; }
+    .card-float-3 { animation: pulseCard 5s ease-in-out infinite 1.6s; }
+    .card-float-4 { animation: pulseCard 4.2s ease-in-out infinite 2.2s; }
+    .star-twinkle-1 { animation: starTwinkle 2.5s ease-in-out infinite; transform-origin: center; }
+    .star-twinkle-2 { animation: starTwinkle 3s ease-in-out infinite 1.2s; transform-origin: center; }
+    .pill-float { animation: floatPill 3.5s ease-in-out infinite alternate; }
+  </style>
+
+  <!-- Deep Canvas Background -->
+  <rect width="1200" height="360" rx="16" fill="url(#bgGrad)"/>
+  <rect width="1200" height="360" rx="16" class="retro-grid"/>
+
+  <!-- Border Frame -->
+  <rect x="2" y="2" width="1196" height="356" rx="15" fill="none" stroke="url(#accentGrad)" stroke-width="2" stroke-opacity="0.5"/>
+
+  <!-- Dynamic Ambient Glow Spots (Background) -->
+  <circle cx="150" cy="180" r="140" fill="#ff007f" opacity="0.12" filter="url(#pixelGlow)"/>
+  <circle cx="1020" cy="120" r="130" fill="#00f0ff" opacity="0.12" filter="url(#pixelGlow)"/>
+  <circle cx="600" cy="40" r="180" fill="#7928ca" opacity="0.15" filter="url(#pixelGlow)"/>
+
+  <!-- Pixelated Star Decorations -->
+  <g class="star-twinkle-1">
+    <rect x="90" y="55" width="8" height="8" fill="#ffd56b" opacity="0.8"/>
+    <rect x="82" y="63" width="8" height="8" fill="#ffd56b" opacity="0.8"/>
+    <rect x="98" y="63" width="8" height="8" fill="#ffd56b" opacity="0.8"/>
+    <rect x="90" y="71" width="8" height="8" fill="#ffd56b" opacity="0.8"/>
+  </g>
+  <g class="star-twinkle-2">
+    <rect x="1110" y="70" width="6" height="6" fill="#00f0ff" opacity="0.8"/>
+    <rect x="1104" y="76" width="6" height="6" fill="#00f0ff" opacity="0.8"/>
+    <rect x="1116" y="76" width="6" height="6" fill="#00f0ff" opacity="0.8"/>
+    <rect x="1110" y="82" width="6" height="6" fill="#00f0ff" opacity="0.8"/>
+  </g>
+  <g class="star-twinkle-1">
+    <rect x="1050" y="270" width="8" height="8" fill="#ff007f" opacity="0.8"/>
+    <rect x="1042" y="278" width="8" height="8" fill="#ff007f" opacity="0.8"/>
+    <rect x="1058" y="278" width="8" height="8" fill="#ff007f" opacity="0.8"/>
+    <rect x="1050" y="286" width="8" height="8" fill="#ff007f" opacity="0.8"/>
+  </g>
+  <g class="star-twinkle-2">
+    <rect x="120" y="280" width="6" height="6" fill="#39ff14" opacity="0.8"/>
+    <rect x="114" y="286" width="6" height="6" fill="#39ff14" opacity="0.8"/>
+    <rect x="126" y="286" width="6" height="6" fill="#39ff14" opacity="0.8"/>
+    <rect x="120" y="292" width="6" height="6" fill="#39ff14" opacity="0.8"/>
+  </g>
+
+  <!-- Foreground Title Header -->
+  <g id="title-group">
+    <!-- Tagline Badge -->
+    <g class="pill-float">
+      <rect x="425" y="42" width="350" height="30" rx="15" fill="#20183b" stroke="#7928ca" stroke-width="1.5"/>
+      <circle cx="442" cy="57" r="4" fill="#39ff14"/>
+      <text x="456" y="62" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="12" font-weight="700" fill="#b8a1ff" letter-spacing="1.5">RETRO &amp; GENERATIVE SPRITE TECH</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="600" y="125" text-anchor="middle" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="38" font-weight="900" fill="#ffffff" letter-spacing="0.5">
+      Awesome Pixel Art &amp; Generative Sprites
+    </text>
+
+    <!-- Subtitle -->
+    <text x="600" y="165" text-anchor="middle" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="16" font-weight="400" fill="#a5b4fc" letter-spacing="0.3">
+      Curated Suite of SaaS Studios, Generative AI Sprite Generators, Tile Editors &amp; Open-Source Pipelines
+    </text>
+  </g>
+
+  <!-- Dynamic Interactive Feature Cards (Placed neatly in bottom zone, keeping foreground text fully visible) -->
+  <g id="feature-cards" transform="translate(60, 215)">
+    <!-- Card 1: Pixel Art Editors -->
+    <g class="card-float-1" transform="translate(0, 0)">
+      <rect width="250" height="85" rx="10" fill="#18142e" stroke="#7928ca" stroke-width="1.2" opacity="0.95"/>
+      <rect x="16" y="18" width="12" height="12" fill="#ff007f"/>
+      <rect x="24" y="26" width="12" height="12" fill="#00f0ff"/>
+      <text x="48" y="29" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#ffffff">Pixel Art Editors</text>
+      <text x="16" y="55" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="400" fill="#94a3b8">Aseprite • LibreSprite • Piskel</text>
+      <text x="16" y="70" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="600" fill="#ffd56b">Layer &amp; Timeline Animation</text>
+    </g>
+
+    <!-- Card 2: Generative AI Sprites -->
+    <g class="card-float-2" transform="translate(275, 0)">
+      <rect width="250" height="85" rx="10" fill="#18142e" stroke="#00f0ff" stroke-width="1.2" opacity="0.95"/>
+      <rect x="16" y="18" width="12" height="12" fill="#00f0ff"/>
+      <rect x="24" y="26" width="12" height="12" fill="#39ff14"/>
+      <text x="48" y="29" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#ffffff">Generative AI Sprites</text>
+      <text x="16" y="55" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="400" fill="#94a3b8">Scenario • AI-Artist • PixelMe</text>
+      <text x="16" y="70" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="600" fill="#00f0ff">Diffusion LoRAs &amp; Inpainting</text>
+    </g>
+
+    <!-- Card 3: Tilesets & Levels -->
+    <g class="card-float-3" transform="translate(550, 0)">
+      <rect width="250" height="85" rx="10" fill="#18142e" stroke="#39ff14" stroke-width="1.2" opacity="0.95"/>
+      <rect x="16" y="18" width="12" height="12" fill="#39ff14"/>
+      <rect x="24" y="26" width="12" height="12" fill="#ffd56b"/>
+      <text x="48" y="29" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#ffffff">Tilesets &amp; World Maps</text>
+      <text x="16" y="55" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="400" fill="#94a3b8">LDtk • Tiled • Pyxel Edit</text>
+      <text x="16" y="70" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="600" fill="#39ff14">Autotiling &amp; Collision Rules</text>
+    </g>
+
+    <!-- Card 4: Retro Pipelines & Engines -->
+    <g class="card-float-4" transform="translate(825, 0)">
+      <rect width="255" height="85" rx="10" fill="#18142e" stroke="#ff007f" stroke-width="1.2" opacity="0.95"/>
+      <rect x="16" y="18" width="12" height="12" fill="#ff007f"/>
+      <rect x="24" y="26" width="12" height="12" fill="#7928ca"/>
+      <text x="48" y="29" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#ffffff">Retro Pipelines</text>
+      <text x="16" y="55" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="400" fill="#94a3b8">Pyxel • GB Studio • TIC-80</text>
+      <text x="16" y="70" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="600" fill="#ff007f">Dithering &amp; Texture Packers</text>
+    </g>
+  </g>
+</svg>
